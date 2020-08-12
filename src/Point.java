@@ -30,23 +30,26 @@ public class Point {
     //* Method named distance without any parameters, it needs to return the distance between this Point and Point 0,0 as double.
     //d(A,B)=√ (xB − xA) * (xB - xA) + (yB − yA) * (yB - yA)
     public double distance () {
-        return Math.sqrt((this.x * this.x) + (this.y * this.y) );
+        Point point = new Point();
+//        return Math.sqrt((this.x - point.x) * (this.x - point.x) + (this.y - point.y) * (this.y - point.y));
+        return distance(point);
     }
 
     //* Method named distance with two parameters x, y both of type int,
     // it needs to return the distance between this Point and Point x,y as double.
     //d(A,B)=√ (xB − xA) * (xB - xA) + (yB − yA) * (yB - yA)
     public double distance (int x, int y) {
-        return Math.sqrt((this.x - x) * (this.x - x) + (this.y - y) * (this.y - y));
+        Point point = new Point(x,y);
+//        return Math.sqrt((this.x - point.x) * (this.x - point.x) + (this.y - point.y) * (this.y - point.y));
+        return distance(point);
     }
 
     //* Method named distance with parameter another of type Point,
     // it needs to return the distance between this Point and another Point as double.
     //d(A,B)=√ (xB − xA) * (xB - xA) + (yB − yA) * (yB - yA)
-    public double distance (Point another) {
-        return Math.sqrt((this.x - another.x) * (this.x - another.x) + (this.y - another.y) * (this.y - another.x));
+    public double distance (Point point) {
+        return Math.sqrt((this.x - point.x) * (this.x - point.x) + (this.y - point.y) * (this.y - point.y));
     }
-
 }
 
 // You have to represent a point in 2D space. Write a class with the name Point.
